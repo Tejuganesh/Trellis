@@ -1,3 +1,21 @@
-# 3D AI Model Generator
+# Sky Forge: 2D Jet Fighter (Mobile-Friendly)
 
-This project provides a simple interface to generate 3D models using AI. The generator leverages advanced algorithms to create high-quality 3D shapes, which can be used in various applications, including games, simulations, and virtual reality.
+A flat 2D, vector-style, side-scrolling fighter jet simulator that runs in the browser.
+
+## Features
+
+- Side-scrolling jet combat against enemy fighters.
+- Touch + keyboard controls.
+- In-game coins and score system.
+- Shop with drag-and-drop upgrades (weapon, engine, armor).
+- Mobile-friendly responsive UI.
+
+## Run locally
+
+Any static server will work:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open `http://localhost:8000`.

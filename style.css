@@ -1,0 +1,178 @@
+:root {
+  color-scheme: dark;
+  --bg: #08101f;
+  --panel: #121d35;
+  --accent: #53d8fb;
+  --accent-2: #98fb9a;
+  --danger: #ff6577;
+  --text: #edf4ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #162a4f 0%, #050a14 60%);
+}
+
+#app {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 0.75rem;
+  padding: env(safe-area-inset-top, 0.5rem) 0.75rem env(safe-area-inset-bottom, 0.75rem);
+}
+
+.hud-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.stat {
+  flex: 1;
+  background: color-mix(in srgb, var(--panel) 92%, white 8%);
+  border: 1px solid #355085;
+  border-radius: 10px;
+  padding: 0.4rem 0.7rem;
+}
+
+.stat span {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.stat strong {
+  font-size: 1.1rem;
+}
+
+.game-wrap {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0.75rem;
+  min-height: 0;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  max-height: 70dvh;
+  border: 1px solid #3c5486;
+  border-radius: 14px;
+  background: linear-gradient(#7cc8ff 0%, #8eddff 30%, #f4fbff 65%, #b7dd8c 100%);
+  touch-action: none;
+}
+
+.panel {
+  border: 1px solid #355085;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--panel) 92%, black 8%);
+  padding: 0.7rem;
+  overflow: auto;
+}
+
+.panel h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+}
+
+.panel p {
+  margin: 0 0 0.75rem;
+  opacity: 0.8;
+  font-size: 0.85rem;
+}
+
+.shop-items {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.shop-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #4869a8;
+  border-radius: 10px;
+  padding: 0.45rem;
+  background: #182744;
+  user-select: none;
+}
+
+.shop-item[draggable="true"] {
+  cursor: grab;
+}
+
+.shop-item .icon {
+  width: 24px;
+  text-align: center;
+}
+
+.shop-item .name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.shop-item .price {
+  color: var(--accent-2);
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+.slots {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.slot {
+  border: 2px dashed #5f75a8;
+  border-radius: 10px;
+  min-height: 54px;
+  padding: 0.45rem;
+  font-size: 0.85rem;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.slot.filled {
+  border-style: solid;
+  background: #274170;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.45rem;
+}
+
+.controls button {
+  min-height: 3rem;
+  border: 1px solid #4e6ba3;
+  background: #1b2e56;
+  color: var(--text);
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.controls button:active {
+  transform: scale(0.98);
+  background: #2a4276;
+}
+
+@media (max-width: 980px) {
+  .game-wrap {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+  }
+
+  canvas {
+    min-height: 45dvh;
+  }
+}

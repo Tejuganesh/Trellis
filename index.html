@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Sky Forge: Jet Fighter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="hud-top">
+        <div class="stat"><span>HP</span><strong id="hpValue">100</strong></div>
+        <div class="stat"><span>Coins</span><strong id="coinsValue">0</strong></div>
+        <div class="stat"><span>Score</span><strong id="scoreValue">0</strong></div>
+      </header>
+
+      <main class="game-wrap">
+        <canvas id="gameCanvas" width="960" height="540" aria-label="Jet fighter game"></canvas>
+
+        <section class="panel shop-panel">
+          <h2>Hangar Shop</h2>
+          <p>Drag a part into your jet loadout slots.</p>
+          <div id="shopItems" class="shop-items"></div>
+
+          <div class="slots" id="loadoutSlots">
+            <div class="slot" data-slot="weapon">Weapon Slot</div>
+            <div class="slot" data-slot="engine">Engine Slot</div>
+            <div class="slot" data-slot="armor">Armor Slot</div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="controls">
+        <button data-action="up">▲</button>
+        <button data-action="left">◀</button>
+        <button data-action="shoot">FIRE</button>
+        <button data-action="right">▶</button>
+        <button data-action="down">▼</button>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
